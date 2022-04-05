@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 class DiskonPage extends StatefulWidget {
   const DiskonPage({Key? key}) : super(key: key);
@@ -28,6 +29,8 @@ class _DiskonPageState extends State<DiskonPage> {
               padding: const EdgeInsets.only(top: 40, left: 20, right: 20),
               child: TextFormField(
                 controller: _ctrlHarga,
+                keyboardType: TextInputType.number,
+                inputFormatters: [FilteringTextInputFormatter.digitsOnly],
                 decoration: const InputDecoration(
                     hintText: "Harga",
                     contentPadding: EdgeInsets.only(left: 20)),
@@ -37,6 +40,8 @@ class _DiskonPageState extends State<DiskonPage> {
               padding: const EdgeInsets.only(top: 40, left: 20, right: 20),
               child: TextFormField(
                 controller: _ctrlDiskon,
+                keyboardType: TextInputType.number,
+                inputFormatters: [FilteringTextInputFormatter.digitsOnly],
                 decoration: const InputDecoration(
                   hintText: "Diskon",
                   contentPadding: EdgeInsets.only(left: 20),
