@@ -24,7 +24,7 @@ class _BeratPageState extends State<BeratPage> {
             children: [
               DropdownButton<String>(
                 hint: Text(_menuPertama),
-                items: <String>['Ton', 'Kg', 'g', 'Mg'].map((String value) {
+                items: <String>['Km', 'm', 'Cm', 'Mm'].map((String value) {
                   return DropdownMenuItem<String>(
                     value: value,
                     child: Text(value),
@@ -39,7 +39,7 @@ class _BeratPageState extends State<BeratPage> {
               const Text("To"),
               DropdownButton<String>(
                 hint: Text(_menukedua),
-                items: <String>['Ton', 'Kg', 'g', 'Mg'].map((String value) {
+                items: <String>['Km', 'm', 'Cm', 'Mm'].map((String value) {
                   return DropdownMenuItem<String>(
                     value: value,
                     child: Text(value),
@@ -74,51 +74,51 @@ class _BeratPageState extends State<BeratPage> {
                       _menukedua == "Pilih Satuan") {
                     Fluttertoast.showToast(msg: "Pilih Satuan Terlebih dahulu !",timeInSecForIosWeb: 1);
                   } else {
-                    if (_menuPertama == 'Ton') {
-                      if (_menukedua == 'Kg') {
+                    if (_menuPertama == 'Km') {
+                      if (_menukedua == 'm') {
                         _hasilconversi = double.parse(_ctrlBerat.text) * 1000;
-                      } else if (_menukedua == 'g') {
+                      } else if (_menukedua == 'Cm') {
                         _hasilconversi =
                             double.parse(_ctrlBerat.text) * 1000000;
-                      } else if (_menukedua == "Mg") {
+                      } else if (_menukedua == "Mm") {
                         _hasilconversi =
                             double.parse(_ctrlBerat.text) * 1000000000;
                       } else {
                         _hasilconversi =
                             double.parse(_ctrlBerat.text.toString());
                       }
-                    } else if (_menuPertama == 'Kg') {
-                      if (_menukedua == 'Ton') {
+                    } else if (_menuPertama == 'm') {
+                      if (_menukedua == 'Km') {
                         _hasilconversi = double.parse(_ctrlBerat.text) / 1000;
-                      } else if (_menukedua == 'g') {
+                      } else if (_menukedua == 'Cm') {
                         _hasilconversi = double.parse(_ctrlBerat.text) * 1000;
-                      } else if (_menukedua == "Mg") {
+                      } else if (_menukedua == "Mm") {
                         _hasilconversi =
                             double.parse(_ctrlBerat.text) * 1000000;
                       } else {
                         _hasilconversi =
                             double.parse(_ctrlBerat.text.toString());
                       }
-                    } else if (_menuPertama == "g") {
-                      if (_menukedua == 'Ton') {
+                    } else if (_menuPertama == "Cm") {
+                      if (_menukedua == 'Km') {
                         _hasilconversi =
                             double.parse(_ctrlBerat.text) / 1000000;
-                      } else if (_menukedua == 'Kg') {
+                      } else if (_menukedua == 'm') {
                         _hasilconversi = double.parse(_ctrlBerat.text) / 1000;
-                      } else if (_menukedua == "Mg") {
+                      } else if (_menukedua == "Mm") {
                         _hasilconversi = double.parse(_ctrlBerat.text) * 1000;
                       } else {
                         _hasilconversi =
                             double.parse(_ctrlBerat.text.toString());
                       }
                     } else {
-                      if (_menukedua == 'Ton') {
+                      if (_menukedua == 'Km') {
                         _hasilconversi =
                             double.parse(_ctrlBerat.text) / 1000000000;
-                      } else if (_menukedua == 'Kg') {
+                      } else if (_menukedua == 'm') {
                         _hasilconversi =
                             double.parse(_ctrlBerat.text) / 1000000;
-                      } else if (_menukedua == "g") {
+                      } else if (_menukedua == "Mm") {
                         _hasilconversi = double.parse(_ctrlBerat.text) / 1000;
                       } else {
                         _hasilconversi =
