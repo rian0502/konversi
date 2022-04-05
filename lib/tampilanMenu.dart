@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:muhammadfebrianhasibuan/beratOperation.dart';
+import 'package:muhammadfebrianhasibuan/bmi_operation.dart';
+import 'package:muhammadfebrianhasibuan/diskon_operation.dart';
 import 'package:muhammadfebrianhasibuan/suhuOperation.dart';
 
 
 class Menu extends StatelessWidget {
-  Menu({ required  this.nama, required this.sub, required this.image, required this.page});
+  Menu({Key? key,  required  this.nama, required this.sub, required this.image, required this.page}) : super(key: key);
   String nama;
   String sub;
   String image;
@@ -20,11 +22,15 @@ class Menu extends StatelessWidget {
         child: InkWell(
           onTap: () => {
             if(page == "berat"){
-              Navigator.push(context,MaterialPageRoute(builder: (context) => BeratPage()))
+              Navigator.push(context,MaterialPageRoute(builder: (context) => const BeratPage()))
             }else if(page == "suhu"){
-              Navigator.push(context,MaterialPageRoute(builder: (context) => SuhuKonversi()))
+              Navigator.push(context,MaterialPageRoute(builder: (context) => const SuhuKonversi()))
             }else if(page == "panjang"){
-              Navigator.push(context,MaterialPageRoute(builder: (context) => BeratPage()))
+              Navigator.push(context,MaterialPageRoute(builder: (context) => const BeratPage()))
+            }else if(page == "diskon"){
+              Navigator.push(context,MaterialPageRoute(builder: (context) => const DiskonPage()))
+            }else{
+              Navigator.push(context,MaterialPageRoute(builder: (context) => const BmiPage()))
             }
           },
           child: Column(

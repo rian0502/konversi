@@ -23,8 +23,9 @@ class _HomePageState extends State<HomePage> {
           children:  [
             Menu(nama: "Massa", sub: "Mengkonversi Berat", image: "images/heavy.png",page: "berat",),
             Menu(nama: "Suhu", sub: "Mengkonversi Suhu", image: "images/suhu.png",page: "suhu",),
-            Menu(nama: "Jarak", sub: "Mengkonversi Panjang Jarak", image: "images/ruler.png",page: "jarak",),
-
+            Menu(nama: "Jarak", sub: "Mengkonversi Panjang Jarak", image: "images/ruler.png",page: "panjang",),
+            Menu(nama: "Diskom", sub: "Menghitung Diskon Dari harga", image: "images/discounts.png", page: "diskon"),
+            Menu(nama: "Body Massa Index", sub: "Menghitung Standar Berat Badan", image: "images/bmi.png", page: "bmi")
           ],
         ),
       ),
