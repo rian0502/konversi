@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class BeratPage extends StatefulWidget {
   const BeratPage({Key? key}) : super(key: key);
@@ -132,8 +133,21 @@ class _BeratPageState extends State<BeratPage> {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.all(30),
-            child: Text(_hasilconversi.toString()),
+            padding: const EdgeInsets.all(20),
+            child: Center(
+              child: Text(
+                "Hasil",
+                maxLines: 1,
+                style: GoogleFonts.oswald(
+                    fontSize: 20, fontWeight: FontWeight.bold),
+              ),
+            ),
+          ),
+          Center(
+            child: Text(_hasilconversi.toString(),
+              maxLines: 1,
+              style: GoogleFonts.oswald(fontSize: 20,fontWeight: FontWeight.bold) ,
+            ),
           )
         ]),
       ),

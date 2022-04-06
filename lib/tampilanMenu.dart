@@ -3,7 +3,7 @@ import 'package:muhammadfebrianhasibuan/beratOperation.dart';
 import 'package:muhammadfebrianhasibuan/bmi_operation.dart';
 import 'package:muhammadfebrianhasibuan/diskon_operation.dart';
 import 'package:muhammadfebrianhasibuan/suhuOperation.dart';
-
+import 'package:google_fonts/google_fonts.dart';
 
 class Menu extends StatelessWidget {
   Menu({Key? key,  required  this.nama, required this.sub, required this.image, required this.page}) : super(key: key);
@@ -49,8 +49,8 @@ class Menu extends StatelessWidget {
                 ),
               ),
               ListTile(
-                title: Text(nama),
-                subtitle: Text(sub),
+                title: Text(nama, style: GoogleFonts.domine(fontWeight: FontWeight.bold, fontSize: 20) ,),
+                subtitle: Text(sub,style: GoogleFonts.heebo(),),
               ),
             ],
           ),
