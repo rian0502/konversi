@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class DiskonPage extends StatefulWidget {
   const DiskonPage({Key? key}) : super(key: key);
@@ -9,14 +10,15 @@ class DiskonPage extends StatefulWidget {
 
 class _DiskonPageState extends State<DiskonPage> {
   double _penilaian = 0.0;
+  double harga_asli = 0.0;
   final TextEditingController _ctrlHarga = TextEditingController();
   final TextEditingController _ctrlDiskon = TextEditingController();
 
-  void _menghitung(){
-      double harga_asli = double.parse(_ctrlHarga.text);
-      _penilaian = int.parse(_ctrlDiskon.text)/100 * harga_asli;
-      _penilaian -= harga_asli;
-      _penilaian *= -1;
+  void _menghitung() {
+     harga_asli = double.parse(_ctrlHarga.text);
+    _penilaian = int.parse(_ctrlDiskon.text) / 100 * harga_asli;
+    _penilaian -= harga_asli;
+    _penilaian *= -1;
   }
 
   @override
@@ -59,9 +61,22 @@ class _DiskonPageState extends State<DiskonPage> {
                   },
                 )),
             Padding(
-              padding: const EdgeInsets.all(30),
+              padding: const EdgeInsets.only(top: 40, bottom: 30, left: 20, right: 20),
               child: Center(
-                child: Text("Harga Akhir : "+_penilaian.toString(),style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),),
+                child: Text(
+                  "Hemat : ${harga_asli - _penilaian}",
+                  maxLines: 1,
+                  style: GoogleFonts.oswald(
+                      fontSize: 20, fontWeight: FontWeight.bold),
+                ),
+              )
+            ),
+            Center(
+              child: Text(
+                "Harga Akhir : " + _penilaian.toString(),
+                maxLines: 1,
+                style: GoogleFonts.oswald(
+                    fontSize: 20, fontWeight: FontWeight.bold),
               ),
             )
           ],

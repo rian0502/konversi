@@ -12,7 +12,13 @@ class BmiPage extends StatefulWidget {
 class _BmiPageState extends State<BmiPage> {
   TextEditingController ctrlTinggi = TextEditingController();
   TextEditingController ctrlBerat = TextEditingController();
-  final double _bmi = 0.0;
+  double _bmi = 0.0;
+
+  double _hitungBmi(){
+    _bmi = double.parse(ctrlBerat.text) / (double.parse(ctrlTinggi.text)/100 * double.parse(ctrlTinggi.text)/100);
+    return _bmi;
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -51,7 +57,11 @@ class _BmiPageState extends State<BmiPage> {
               padding: const EdgeInsets.all(20),
               child: ElevatedButton(
                 child: const Text("Hitung"),
-                onPressed: () {},
+                onPressed: () {
+                  setState(() {
+                    _hitungBmi();
+                  });
+                },
               ),
             ),
             Padding(

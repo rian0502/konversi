@@ -150,10 +150,12 @@ class _SuhuKonversiState extends State<SuhuKonversi> {
           ),
           Center(
             child: Text(
-              _hasilconversi.toStringAsFixed(2),
-              style: const TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+              _hasilconversi.toString(),
+              maxLines: 1,
+              style: GoogleFonts.oswald(
+                  fontSize: 20, fontWeight: FontWeight.bold),
             ),
-          ),
+          )
         ]),
       ),
     );

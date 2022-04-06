@@ -21,11 +21,11 @@ class _HomePageState extends State<HomePage> {
       body: SafeArea(
         child: ListView(
           children:  [
+            Menu(nama: "Jarak", sub: "Mengkonversi Panjang Jarak", image: "images/ruler.png",page: "panjang",),
             Menu(nama: "Massa", sub: "Mengkonversi Berat", image: "images/heavy.png",page: "berat",),
             Menu(nama: "Suhu", sub: "Mengkonversi Suhu", image: "images/suhu.png",page: "suhu",),
-            Menu(nama: "Jarak", sub: "Mengkonversi Panjang Jarak", image: "images/ruler.png",page: "panjang",),
+            Menu(nama: "Body Massa Index", sub: "Menghitung Standar Berat Badan", image: "images/bmi.png", page: "bmi"),
             Menu(nama: "Diskon", sub: "Menghitung Diskon Dari harga", image: "images/discounts.png", page: "diskon"),
-            Menu(nama: "Body Massa Index", sub: "Menghitung Standar Berat Badan", image: "images/bmi.png", page: "bmi")
           ],
         ),
       ),
